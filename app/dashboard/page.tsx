@@ -1,4 +1,4 @@
-// import Documents from "@/components/Documents";
+import Documents from "@/components/Documents";
 
 function Dashboard() {
   return (
@@ -7,7 +7,7 @@ function Dashboard() {
         My Documents
       </h1>
 
-      {/* <Documents /> */}
+      <Documents />
     </div>
   );
 }
