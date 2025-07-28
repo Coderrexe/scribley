@@ -3,8 +3,7 @@ import { ClerkLoaded } from "@clerk/nextjs";
 
 function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
-    // ClerkLoaded ensures Clerk object has loaded, so we can use Clerk
-    // functionalities like SignIn without needing to check Clerk exists.
+    // ClerkLoaded ensures Clerk object has loaded
     <ClerkLoaded>
       <div className="flex-1 flex flex-col h-screen">
         <Header />

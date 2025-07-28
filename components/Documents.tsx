@@ -1,6 +1,5 @@
 import PlaceholderDocument from "./PlaceholderDocument";
 import { auth } from "@clerk/nextjs/server";
-import Document from "./Document";
 
 async function Documents() {
   const { userId } = await auth();
