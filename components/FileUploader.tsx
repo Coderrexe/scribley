@@ -11,12 +11,26 @@ import {
 } from "lucide-react";
 
 function FileUploader() {
-  const onDrop = useCallback((acceptedFiles: File[]) => {
+  const { progress, status, fileId, handleUpload } = useUpload();
+
+  const onDrop = useCallback(async (acceptedFiles: File[]) => {
     // Do something with the files
+    const file = acceptedFiles[0];
+
+    if (file) {
+      await handleUpload(file);
+    } else {
+      // toast
+    }
   }, []);
+
   const { getRootProps, getInputProps, isDragActive, isFocused, isDragAccept } =
     useDropzone({
       onDrop,
+      maxFiles: 1,
+      accept: {
+        "application/pdf": [".pdf"],
+      },
     });
 
   return (
