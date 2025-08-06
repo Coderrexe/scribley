@@ -64,7 +64,7 @@ function useUpload() {
         });
 
         setStatus(StatusText.GENERATING);
-        await generateEmbeddings(fileIdToUploadTo);
+        // await generateEmbeddings(fileIdToUploadTo);
 
         setFileId(fileIdToUploadTo);
       }
@@ -72,7 +72,6 @@ function useUpload() {
   };
 
   return { progress, status, fileId, handleUpload };
-  };
 }
 
 export default useUpload;
