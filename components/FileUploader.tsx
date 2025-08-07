@@ -10,7 +10,7 @@ import {
   SaveIcon,
 } from "lucide-react";
 import useUpload, { StatusText } from "@/hooks/useUpload";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 function FileUploader() {
   const { progress, status, fileId, handleUpload } = useUpload();
