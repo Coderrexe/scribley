@@ -1,5 +1,6 @@
 "use server";
 
+import { generateEmbeddingsInPineconeVectorStore } from "@/lib/langchain";
 import { auth } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
 
@@ -7,7 +8,7 @@ export async function generateEmbeddings(docId: string) {
   await auth.protect();
 
   // turn a PDF into vector embeddings
-  // await generateEmbeddingsInPineconeVectorStore(docId);
+  await generateEmbeddingsInPineconeVectorStore(docId);
 
   revalidatePath("/dashboard");
 
